@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        .parentline {
+            width: 110%;
+            height: 120px;
+            background-color: black;
+            overflow: hidden;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+
+
+        }
+
+        .line {
+            position: absolute;
+            width: 110%;
+            height: 180px;
+            border-radius: 53%;
+            transform: translate(-50%);
+            left: 50%;
+            background: linear-gradient(to right,
+                    rgba(33, 13, 22, 1) 16%,
+                    rgba(184, 40, 105, 1),
+                    rgba(229, 9, 20, 1),
+                    rgba(184, 40, 105, 1),
+                    rgba(33, 13, 22, 1) 84%);
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 3;
+
+
+        }
+
+
+        .line::before {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            border-radius: 53%;
+            background: black;
+
+        }
+
+        .glow {
+            margin-top: 5px;
+            position: absolute;
+            height: 200px;
+            width: 550px;
+            z-index: 1;
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(20, 60, 140, 0.6) 0%, rgba(0, 0, 0, 0.0) 80%);
+        }
+    </style>
+</head>
+
+<body>
+    <input type="email" placeholder="Email Address" class="email" name="email" id="email">
+    <div class="parentline">
+        <div class="line">
+            <div class="glow"></div>
+        </div>
+    </div>
+</body>
+
+</html>
